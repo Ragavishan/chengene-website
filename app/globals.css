@@ -24,3 +24,137 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+/* ========================================
+   MOBILE RESPONSIVENESS IMPROVEMENTS
+======================================== */
+
+@media (max-width: 768px) {
+  /* Prevent unwanted horizontal scrolling */
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Smooth section spacing on mobile */
+  section {
+    scroll-margin-top: 75px;
+  }
+
+  /* Responsive headings */
+  h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    line-height: 1.35;
+    overflow-wrap: break-word;
+  }
+
+  /* Images should fit their containers */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Better tap experience */
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent long text from overflowing */
+  p,
+  a {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  section {
+    scroll-margin-top: 85px;
+  }
+}
+@keyframes facilitySlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes facilitySlideNext {
+  0% {
+    opacity: 0;
+    transform: translateX(90px) scale(0.97);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes facilitySlidePrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-90px) scale(0.97);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.facility-slide-next {
+  animation: facilitySlideNext 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.facility-slide-prev {
+  animation: facilitySlidePrev 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .facility-slide-next,
+  .facility-slide-prev {
+    animation: none;
+  }
+}
+
+/* Equipment continuous marquee */
+@keyframes equipment-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+.equipment-marquee {
+  animation: equipment-marquee 45s linear infinite;
+  will-change: transform;
+}
+
+.equipment-marquee.animation-paused {
+  animation-play-state: paused;
+}
