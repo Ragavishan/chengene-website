@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     "MEPZ Tambaram",
   ],
   authors: [{ name: "Chengene Private Limited" }],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

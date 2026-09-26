@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const expertiseLinks = [
   { name: "Production", href: "#production" },
@@ -18,6 +19,9 @@ const mainLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [expertiseOpen, setExpertiseOpen] = useState(false);
 
@@ -27,14 +31,19 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-60 ">
-
+    <header
+      className={`fixed inset-x-0 top-0 z-60 transition-all duration-300 ${
+        isHomePage
+        ? ""
+        : "border-b border-purple-100 bg-white/95 shadow-sm backdrop-blur-[10px]"
+      }`}
+    >
       {/* MAIN NAVIGATION BAR */}
       <div className="mx-auto flex min-h-[78px] max-w-[1600px] items-center justify-between gap-5 px-5 md:px-10 lg:px-16">
 
         {/* CHENGENE BRANDING */}
         <a
-          href="#home"
+          href="/#home"
           onClick={closeMenu}
           aria-label="Chengene Private Limited - Home"
           className="group flex shrink-0 items-center gap-3"
@@ -48,11 +57,21 @@ export default function Header() {
 
           {/* COMPANY NAME */}
           <div className="flex flex-col">
-            <span className="text-[25px] font-extrabold leading-none tracking-[0.30em] text-white transition-colors group-hover:text-purple-200 md:text-[25px]">
+            <span
+              className={`text-[25px] font-extrabold leading-none tracking-[0.30em] transition-colors md:text-[25px] ${
+                isHomePage
+                  ? "text-white group-hover:text-purple-200"
+                  : "text-purple-700 group-hover:text-purple-900"
+              }`}
+            >
               CHENGENE
             </span>
 
-            <span className="mt-2 text-[8px] font-semibold uppercase tracking-[0.19em] text-white/65 md:text-[9px] md:tracking-[0.20em]">
+            <span
+              className={`mt-2 text-[8px] font-semibold uppercase tracking-[0.19em] md:text-[9px] md:tracking-[0.20em] ${
+                isHomePage ? "text-white/65" : "text-purple-400"
+              }`}
+            >
               Research · Innovation · Impact
             </span>
           </div>
@@ -66,8 +85,12 @@ export default function Header() {
           {mainLinks.slice(0, 2).map((link) => (
             <a
               key={link.href}
-              href={link.href}
-              className="group relative whitespace-nowrap py-3 text-[13px] font-medium text-white/85 transition-colors hover:text-purple-200"
+              href={`/${link.href}`}
+              className={`group relative whitespace-nowrap py-3 text-[13px] font-medium transition-colors ${
+                isHomePage
+                  ? "text-white/85 hover:text-purple-200"
+                  : "text-[#51476D] hover:text-purple-700"
+              }`}
             >
               {link.name}
 
@@ -80,7 +103,11 @@ export default function Header() {
             <button
               type="button"
               aria-haspopup="true"
-              className="flex items-center gap-2 whitespace-nowrap py-3 text-[13px] font-medium text-white transition-colors hover:text-purple-200"
+              className={`flex items-center gap-2 whitespace-nowrap py-3 text-[13px] font-medium transition-colors ${
+                isHomePage
+                  ? "text-white hover:text-purple-200"
+                  : "text-[#51476D] hover:text-purple-700"
+              }`}
             >
               Our Expertise
 
@@ -110,7 +137,7 @@ export default function Header() {
               {expertiseLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={`/${link.href}`}
                   className="flex items-center justify-between rounded-xl px-4 py-3 text-[13px] font-medium text-[#51476D] transition-all hover:bg-purple-50 hover:text-purple-800"
                 >
                   {link.name}
@@ -125,8 +152,12 @@ export default function Header() {
           {mainLinks.slice(2).map((link) => (
             <a
               key={link.href}
-              href={link.href}
-              className="group relative whitespace-nowrap py-3 text-[13px] font-medium text-white/85 transition-colors hover:text-purple-200"
+              href={`/${link.href}`}
+              className={`group relative whitespace-nowrap py-3 text-[13px] font-medium transition-colors ${
+                isHomePage
+                  ? "text-white/85 hover:text-purple-200"
+                  : "text-[#51476D] hover:text-purple-700"
+              }`}
             >
               {link.name}
 
@@ -137,8 +168,12 @@ export default function Header() {
 
         {/* PARTNER WITH US CTA */}
         <a
-          href="#contact"
-          className="hidden shrink-0 items-center gap-3 rounded-full border border-white/40 bg-white/[0.06] px-5 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:border-purple-300 hover:bg-purple-600 xl:inline-flex"
+          href="/#contact"
+          className={`hidden shrink-0 items-center gap-3 rounded-full px-5 py-3 text-[12px] font-semibold transition-all duration-300 xl:inline-flex ${
+            isHomePage
+              ? "border border-white/40 bg-white/[0.06] text-white hover:border-purple-300 hover:bg-purple-600"
+              : "border border-purple-200 bg-purple-50 text-purple-700 hover:border-purple-300 hover:bg-purple-100"
+          }`}
         >
           Partner With Us
 
@@ -153,7 +188,11 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/25 bg-white/10 text-white transition hover:bg-white/20 xl:hidden"
+          className={`flex h-11 w-11 items-center justify-center rounded-xl transition xl:hidden ${
+            isHomePage
+              ? "border border-white/25 bg-white/10 text-white hover:bg-white/20"
+              : "border border-purple-200 bg-purple-50 text-purple-700 hover:bg-purple-100"
+          }`}
         >
           {menuOpen ? (
             <svg
@@ -189,7 +228,7 @@ export default function Header() {
 
       {/* MOBILE NAVIGATION */}
       <div
-        className={`overflow-hidden border-t border-purple-100 text-white backdrop-blur-xl transition-all duration-300 xl:hidden ${
+        className={`overflow-hidden border-t border-purple-100 bg-white text-white backdrop-blur-xl transition-all duration-300 xl:hidden ${
           menuOpen
             ? "max-h-[85vh] overflow-y-auto opacity-100"
             : "max-h-0 opacity-0"
@@ -203,7 +242,7 @@ export default function Header() {
           {mainLinks.slice(0, 2).map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={`/${link.href}`}
               onClick={closeMenu}
               className="border-b border-purple-50 py-3.5 text-sm font-medium text-[#51476D] transition hover:pl-2 hover:text-purple-700"
             >
@@ -243,7 +282,7 @@ export default function Header() {
               {expertiseLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={`/${link.href}`}
                   onClick={closeMenu}
                   className="block rounded-lg px-3 py-3 text-sm text-[#51476D] transition hover:bg-white hover:text-purple-700"
                 >
@@ -257,7 +296,7 @@ export default function Header() {
           {mainLinks.slice(2).map((link) => (
             <a
               key={link.href}
-              href={link.href}
+              href={`/${link.href}`}
               onClick={closeMenu}
               className="border-b border-purple-50 py-3.5 text-sm font-medium text-[#51476D] transition hover:pl-2 hover:text-purple-700"
             >
@@ -267,7 +306,7 @@ export default function Header() {
 
           {/* MOBILE PARTNER CTA */}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={closeMenu}
             className="mt-5 flex items-center justify-center gap-3 rounded-full bg-purple-700 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-purple-700/20 transition hover:bg-purple-800"
           >

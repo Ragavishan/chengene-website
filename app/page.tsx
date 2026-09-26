@@ -274,7 +274,7 @@ export default function Home() {
             {/* HEADLINE */}
             <div className="max-w-[800px]">
 
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-purple-300 sm:text-[20px]">
+              <p className="mb-5 text-xs font-bold uppercase tracking-[0.28em] text-[#D8B4FE] drop-shadow-[0_0_10px_rgba(216,180,254,0.45)] sm:text-[20px]">
                 Biotechnology
               </p>
 
@@ -1794,127 +1794,276 @@ export default function Home() {
 
 
       {/* FOOTER */}
-      <footer className="border-t border-purple-100 bg-white px-6 pt-14 pb-8 md:px-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 border-b border-purple-100 pb-10 md:grid-cols-2 lg:grid-cols-4">
+      <footer className="relative overflow-hidden border-t border-purple-100 bg-[#F8F6FF] text-[#291844]">
+
+        {/* Decorative background */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-purple-200/30 blur-[120px]"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-violet-200/30 blur-[130px]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-6 md:px-16">
+
+          {/* Premium Scientific Collaboration CTA */}
+          <div className="relative overflow-hidden border-b border-purple-100 py-16 md:py-20">
+
+            {/* Building Image */}
+            <img
+              src="/chengene-footer.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+
+            {/* Premium light overlay */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-r from-[#F8F6FF] via-[#F8F6FF]/95 to-[#F8F6FF]/45"
+            />
+
+            {/* Soft lavender overlay */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-purple-100/15"
+            />
+
+            {/* Subtle right-side fade */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white/10 to-transparent"
+            />
+
+            <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-purple-600">
+                  Scientific Collaboration
+                </p>
+
+                <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight text-[#291844] sm:text-4xl md:text-5xl">
+                  Where Scientific Discovery
+                  <span className="block bg-gradient-to-r from-purple-700 via-violet-600 to-purple-500 bg-clip-text text-transparent">
+                    Meets Translational Innovation.
+                  </span>
+                </h2>
+
+                <p className="mt-5 max-w-2xl text-sm leading-7 text-[#6F6282] md:text-base">
+                  CHENGENE brings together expertise in biologics,
+                  biopharmaceutical development, reproductive biotechnology,
+                  and advanced research platforms to accelerate the journey
+                  from scientific discovery to development.
+                </p>
+              </div>
+
+              <a
+                href="mailto:team@chengene.org?subject=Scientific%20Collaboration%20with%20CHENGENE"
+                className="group inline-flex w-fit items-center gap-3 rounded-full bg-purple-700 px-7 py-4 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(91,33,182,0.20)] transition duration-300 hover:-translate-y-1 hover:bg-purple-800 hover:shadow-[0_18px_40px_rgba(91,33,182,0.28)]"
+              >
+                Initiate a Scientific Collaboration
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </a>
+
+            </div>
+          </div>
+
+
+          {/* Main Footer */}
+          <div className="grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_0.9fr_1fr]">
+
             {/* Brand */}
             <div>
+
               <a href="#home" className="inline-block">
-                <p className="text-2xl font-bold tracking-wide text-purple-700">
+                <p className="text-3xl font-bold tracking-wide text-purple-700">
                   CHENGENE
                 </p>
-                <p className="mt-1 text-[10px] font-medium tracking-[4px] text-purple-400">
+
+                <p className="mt-1 text-[10px] font-semibold tracking-[5px] text-purple-400">
                   BIOTECHNOLOGY
                 </p>
               </a>
 
-              <p className="mt-5 max-w-xs text-sm leading-7 text-[#89799F]">
+              <p className="mt-6 max-w-sm text-sm leading-7 text-[#817393]">
                 Advancing biotechnology through research,
                 innovation and scientific development.
               </p>
+
+              {/* Expertise pills */}
+              <div className="mt-7 flex max-w-md flex-wrap gap-2">
+                {[
+                  "Biologics",
+                  "IVF Media",
+                  "Monoclonal Antibodies",
+                  "Research",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-purple-200 bg-white/70 px-3 py-2 text-[11px] font-medium text-purple-700"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
             </div>
 
-            {/* Quick Links */}
+
+            {/* Explore */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#493765]">
-                Quick Links
+              <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#493765]">
+                Explore
               </h3>
 
-              <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3">
+              <div className="mt-6 space-y-3.5">
                 {[
-                  ["Home", "#home"],
                   ["About Us", "#about"],
                   ["Production", "#production"],
-                  ["R&D", "#research"],
+                  ["Research & Development", "#research"],
                   ["Facilities", "#facilities"],
-                  ["Licenses", "#license"],
                   ["Careers", "#careers"],
-                  ["Contact", "#contact"],
+                  ["Contact Us", "#contact"],
                 ].map(([label, href]) => (
                   <a
                     key={label}
                     href={href}
-                    className="text-sm text-[#89799F] transition hover:text-purple-700"
+                    className="group flex items-center gap-2 text-sm text-[#817393] transition duration-200 hover:text-purple-700"
                   >
+                    <span
+                      aria-hidden="true"
+                      className="h-px w-0 bg-purple-500 transition-all duration-200 group-hover:w-4"
+                    />
                     {label}
                   </a>
                 ))}
               </div>
             </div>
 
-            {/* Contact */}
+
+            {/* Capabilities */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#493765]">
-                Get in Touch
+              <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#493765]">
+                Capabilities
               </h3>
 
-              <div className="mt-5 space-y-3 text-sm text-[#89799F]">
+              <div className="mt-6 space-y-3.5">
+                {[
+                  "Biotechnology Research",
+                  "Biopharmaceutical Development",
+                  "IVF Media Production",
+                  "Cell Biology",
+                  "Molecular Biology",
+                  "Bio-Analytical Research",
+                ].map((item) => (
+                  <p
+                    key={item}
+                    className="text-sm text-[#817393]"
+                  >
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+
+
+            {/* Connect */}
+            <div>
+              <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#493765]">
+                Connect
+              </h3>
+
+              <div className="mt-6 space-y-5">
+
                 <a
                   href="mailto:team@chengene.org"
-                  className="block break-all transition hover:text-purple-700"
+                  className="group block"
                 >
-                  team@chengene.org
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-purple-700">
+                    Email
+                  </span>
+
+                  <span className="mt-1 block text-sm text-[#817393] transition hover:text-purple-700">
+                    team@chengene.org
+                  </span>
                 </a>
 
                 <a
                   href="tel:+919363465290"
-                  className="block transition hover:text-purple-700"
+                  className="group block"
                 >
-                  +91 9363465290
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-purple-700">
+                    Phone
+                  </span>
+
+                  <span className="mt-1 block text-sm text-[#817393] transition hover:text-purple-700">
+                    +91 9363465290
+                  </span>
                 </a>
 
-                <p className="leading-6">
-                  A-8, Phase-II, 3rd Main Road,
-                  <br />
-                  MEPZ-SEZ, Tambaram,
-                  <br />
-                  Chennai - 600 045, Tamil Nadu.
-                </p>
+                <div>
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-purple-700">
+                    Location
+                  </span>
+
+                  <p className="mt-1 text-sm leading-6 text-[#817393]">
+                    MEPZ-SEZ, Tambaram,
+                    <br />
+                    Chennai, Tamil Nadu.
+                  </p>
+                </div>
+
               </div>
             </div>
 
-            {/* Company Details */}
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-widest text-[#493765]">
-                Company Details
-              </h3>
+          </div>
 
-              <p className="mt-5 text-sm leading-7 text-[#89799F]">
-                CHENGENE Private Limited
-              </p>
 
-              <p className="mt-3 text-xs font-medium uppercase tracking-wider text-[#A08DB9]">
-                GSTIN
-              </p>
+          {/* Bottom Expertise Line */}
+          <div className="border-t border-purple-100 py-6">
 
-              <p className="mt-1 text-sm text-[#89799F]">
-                33AALCC4970F2ZM
-              </p>
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
 
-              <a
-                href="#contact"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-purple-600 transition hover:text-purple-800"
-              >
-                Contact Us <span>↗</span>
-              </a>
+              <div>
+                <p className="text-xs text-[#9A8BAA]">
+                  © {new Date().getFullYear()} CHENGENE Private Limited.
+                  All rights reserved.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5">
+
+                <span className="hidden text-[10px] font-medium uppercase tracking-[0.2em] text-[#B0A2BE] sm:block">
+                  Science · Innovation · Impact
+                </span>
+
+                <a
+                  href="#home"
+                  className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-purple-600 transition hover:text-purple-800"
+                >
+                  Back to Top
+                  <span
+                    aria-hidden="true"
+                    className="transition-transform duration-300 group-hover:-translate-y-1"
+                  >
+                    ↑
+                  </span>
+                </a>
+
+              </div>
+
             </div>
+
           </div>
 
-          {/* Bottom Bar */}
-          <div className="flex flex-col gap-4 pt-7 md:flex-row md:items-center md:justify-between">
-            <p className="text-xs leading-6 text-[#9A8BAA]">
-              © {new Date().getFullYear()} CHENGENE Private Limited.
-              All rights reserved.
-            </p>
-
-            <a
-              href="#home"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-purple-600 transition hover:text-purple-800"
-            >
-              Back to Top
-              <span>↑</span>
-            </a>
-          </div>
         </div>
       </footer>
     </main>
