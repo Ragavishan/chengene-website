@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const equipment = [
   {
     name: "Biosafety Cabinet – B2 Class",
-    image: "/equipment/biosafety-cabinet-b2-class 2.jpg",
+    image: "/equipment/biosafety-cabinet-b2-class2.jpg",
   },
   {
     name: "Cell Counter",
