@@ -3,7 +3,7 @@ import "./globals.css";
 import IntroScreen from "./components/IntroScreen";
 
 export const metadata: Metadata = {
-  title: "Chengene Private Limited | Biologics & IVF Media",
+  title: "Chengene Private Limited | Biotechnology & IVF Media",
   description:
     "Chengene Private Limited, Chennai, develops biologics, IVF media, monoclonal antibodies and advanced life science solutions.",
   keywords: [
