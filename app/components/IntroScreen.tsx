@@ -23,9 +23,7 @@ export default function IntroScreen({
       {/* MAIN WEBSITE */}
       <div
         className={`transition-opacity duration-700 ease-out ${
-          showIntro
-            ? "pointer-events-none opacity-0"
-            : "opacity-100"
+          showIntro ? "pointer-events-none opacity-0" : "opacity-100"
         }`}
       >
         <Header />
@@ -40,29 +38,33 @@ export default function IntroScreen({
             : "pointer-events-none opacity-0"
         }`}
       >
-        {/* MOBILE BACKGROUND - soft blurred image */}
+        {/* SOFT BACKGROUND */}
         <img
-            src="/dna.jpg"
-            alt=""
-            aria-hidden="true"
-            className="absolute inset-0 h-full w-full scale-110 object-cover opacity-30 blur-2xl"
-            />
-
-        {/* MAIN DNA IMAGE - fully visible on mobile */}
-        <img
-            src="/dna.jpg"
-            alt="CHENGENE - The Future of Life Sciences"
-            className="dna-image relative z-10 h-full w-full object-contain md:absolute md:inset-0"
+          src="/dna.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full scale-125 object-cover opacity-25 blur-2xl"
         />
 
-        {/* BLUE GLOW EFFECT */}
-        <div className="dna-glow absolute inset-0" />
+        {/* MAIN DNA IMAGE */}
+        <img
+          src="/dna.jpg"
+          alt="CHENGENE"
+          className="dna-image absolute left-1/2 top-1/2 z-10 h-auto w-full -translate-x-1/2 -translate-y-1/2 object-contain"
+        />
+
+        {/* DARK CINEMATIC OVERLAY */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-[#06183D]/35 via-transparent to-[#06183D]/65" />
+
+        {/* BLUE GLOW */}
+        <div className="dna-glow absolute inset-0 z-30" />
 
         {/* LIGHT SWEEP */}
-        <div className="dna-light absolute inset-0" />
+        <div className="dna-light absolute inset-0 z-40" />
+
 
         {/* LOADING LINE */}
-        <div className="absolute bottom-0 left-0 h-[3px] w-full bg-white/10">
+        <div className="absolute bottom-0 left-0 z-50 h-[3px] w-full bg-white/10">
           <div className="dna-loader h-full bg-cyan-300" />
         </div>
       </div>
@@ -70,22 +72,15 @@ export default function IntroScreen({
       {/* ANIMATION */}
       <style jsx global>{`
         .dna-image {
-            animation: dnaZoom 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-            will-change: transform;
-            object-fit: contain;
-            }
-
-        @media (min-width: 768px) {
-            .dna-image {
-                object-fit: cover;
-            }
+          animation: dnaZoom 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+          will-change: transform;
         }
 
         .dna-glow {
           background: radial-gradient(
-            ellipse at 75% 45%,
+            ellipse at center,
             rgba(0, 195, 255, 0.12),
-            transparent 55%
+            transparent 60%
           );
 
           animation: glowPulse 2.5s ease-in-out infinite;
@@ -95,7 +90,7 @@ export default function IntroScreen({
           background: linear-gradient(
             115deg,
             transparent 35%,
-            rgba(100, 230, 255, 0.12) 50%,
+            rgba(100, 230, 255, 0.10) 50%,
             transparent 65%
           );
 
@@ -123,7 +118,7 @@ export default function IntroScreen({
         @keyframes glowPulse {
           0%,
           100% {
-            opacity: 0.3;
+            opacity: 0.35;
           }
 
           50% {
@@ -159,7 +154,8 @@ export default function IntroScreen({
             animation-duration: 0.01ms;
           }
         }
-      `}</style>
+      `}
+      </style>
     </>
   );
 }

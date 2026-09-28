@@ -34,33 +34,33 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-60 transition-all duration-300 ${
         isHomePage
-        ? ""
-        : "border-b border-purple-100 bg-white/95 shadow-sm backdrop-blur-[10px]"
+          ? "bg-white/65 backdrop-blur-[12px] lg:bg-transparent lg:backdrop-blur-[8px]"
+          : "border-b border-purple-100 bg-white/95 shadow-sm backdrop-blur-[10px]"
       }`}
     >
       {/* MAIN NAVIGATION BAR */}
-      <div className="mx-auto flex min-h-[78px] max-w-[1600px] items-center justify-between gap-5 px-5 md:px-10 lg:px-16">
+      <div className="mx-auto flex min-h-[70px] max-w-[1600px] items-center justify-between gap-4 px-4 sm:min-h-[78px] sm:px-5 md:px-10 lg:px-16">
 
         {/* CHENGENE BRANDING */}
         <a
           href="/#home"
           onClick={closeMenu}
           aria-label="Chengene Private Limited - Home"
-          className="group flex shrink-0 items-center gap-3"
+          className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
         >
           {/* COMPANY LOGO */}
           <img
             src="/logo.jpeg"
             alt="Chengene Logo"
-            className="h-14 w-14 shrink-0 rounded-full object-contain shadow-lg ring-1 ring-white/40 md:h-16 md:w-16"
+            className="h-12 w-12 shrink-0 rounded-full object-contain shadow-md ring-1 ring-[#B9D8E8]/70 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:ring-white/40"
           />
 
           {/* COMPANY NAME */}
-          <div className="flex flex-col">
+          <div className="flex min-w-0 flex-col">
             <span
-              className={`text-[25px] font-extrabold leading-none tracking-[0.30em] transition-colors md:text-[25px] ${
+              className={`text-[21px] font-extrabold leading-none tracking-[0.22em] transition-colors sm:text-[25px] sm:tracking-[0.30em] md:text-[25px] ${
                 isHomePage
-                  ? "text-white group-hover:text-purple-200"
+                  ? "text-[#173B5C] group-hover:text-purple-600 lg:text-white lg:group-hover:text-purple-200"
                   : "text-purple-700 group-hover:text-purple-900"
               }`}
             >
@@ -68,8 +68,10 @@ export default function Header() {
             </span>
 
             <span
-              className={`mt-2 text-[8px] font-semibold uppercase tracking-[0.19em] md:text-[9px] md:tracking-[0.20em] ${
-                isHomePage ? "text-white/65" : "text-purple-400"
+              className={`mt-1.5 text-[7px] font-semibold uppercase tracking-[0.16em] sm:mt-2 sm:text-[8px] sm:tracking-[0.19em] md:text-[9px] md:tracking-[0.20em] ${
+                isHomePage
+                  ? "text-[#66859A] lg:text-white/65"
+                  : "text-purple-400"
               }`}
             >
               Research · Innovation · Impact
@@ -129,7 +131,6 @@ export default function Header() {
 
             {/* DROPDOWN PANEL */}
             <div className="invisible absolute left-0 top-full z-50 w-64 translate-y-2 rounded-2xl border border-purple-100 bg-white p-2 opacity-0 shadow-xl shadow-purple-950/10 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
-
               <p className="px-4 pb-2 pt-3 text-[10px] font-bold uppercase tracking-[0.18em] text-purple-500">
                 Explore Our Expertise
               </p>
@@ -186,17 +187,19 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
-          className={`flex h-11 w-11 items-center justify-center rounded-xl transition xl:hidden ${
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition sm:h-11 sm:w-11 xl:hidden ${
             isHomePage
-              ? "border border-white/25 bg-white/10 text-white hover:bg-white/20"
+              ? "border border-[#B9D8E8] bg-white/55 text-[#315B76] shadow-sm backdrop-blur-sm hover:bg-white/80 lg:border-white/25 lg:bg-white/10 lg:text-white lg:shadow-none lg:hover:bg-white/20"
               : "border border-purple-200 bg-purple-50 text-purple-700 hover:bg-purple-100"
           }`}
         >
           {menuOpen ? (
             <svg
-              className="h-6 w-6"
+              className="h-5 w-5 sm:h-6 sm:w-6"
               viewBox="0 0 24 24"
               fill="none"
               aria-hidden="true"
@@ -210,7 +213,7 @@ export default function Header() {
             </svg>
           ) : (
             <svg
-              className="h-6 w-6"
+              className="h-5 w-5 sm:h-6 sm:w-6"
               viewBox="0 0 24 24"
               fill="none"
               aria-hidden="true"
@@ -228,7 +231,7 @@ export default function Header() {
 
       {/* MOBILE NAVIGATION */}
       <div
-        className={`overflow-hidden border-t border-purple-100 bg-white text-white backdrop-blur-xl transition-all duration-300 xl:hidden ${
+        className={`overflow-hidden border-t border-[#D8EAF4] bg-white/95 text-[#173B5C] shadow-[0_12px_35px_rgba(50,100,130,0.10)] backdrop-blur-xl transition-all duration-300 xl:hidden ${
           menuOpen
             ? "max-h-[85vh] overflow-y-auto opacity-100"
             : "max-h-0 opacity-0"
@@ -244,7 +247,7 @@ export default function Header() {
               key={link.href}
               href={`/${link.href}`}
               onClick={closeMenu}
-              className="border-b border-purple-50 py-3.5 text-sm font-medium text-[#51476D] transition hover:pl-2 hover:text-purple-700"
+              className="border-b border-[#E6F1F7] py-3.5 text-sm font-medium text-[#41647D] transition hover:pl-2 hover:text-purple-700"
             >
               {link.name}
             </a>
@@ -255,7 +258,7 @@ export default function Header() {
             type="button"
             onClick={() => setExpertiseOpen(!expertiseOpen)}
             aria-expanded={expertiseOpen}
-            className="flex items-center justify-between border-b border-purple-50 py-3.5 text-left text-sm font-medium text-[#51476D]"
+            className="flex items-center justify-between border-b border-[#E6F1F7] py-3.5 text-left text-sm font-medium text-[#41647D]"
           >
             Our Expertise
 
@@ -278,13 +281,13 @@ export default function Header() {
           </button>
 
           {expertiseOpen && (
-            <div className="rounded-xl bg-purple-50/70 px-3 py-2">
+            <div className="rounded-xl bg-[#EEF8FF] px-3 py-2">
               {expertiseLinks.map((link) => (
                 <a
                   key={link.href}
                   href={`/${link.href}`}
                   onClick={closeMenu}
-                  className="block rounded-lg px-3 py-3 text-sm text-[#51476D] transition hover:bg-white hover:text-purple-700"
+                  className="block rounded-lg px-3 py-3 text-sm text-[#41647D] transition hover:bg-white hover:text-purple-700"
                 >
                   {link.name}
                 </a>
@@ -298,7 +301,7 @@ export default function Header() {
               key={link.href}
               href={`/${link.href}`}
               onClick={closeMenu}
-              className="border-b border-purple-50 py-3.5 text-sm font-medium text-[#51476D] transition hover:pl-2 hover:text-purple-700"
+              className="border-b border-[#E6F1F7] py-3.5 text-sm font-medium text-[#41647D] transition hover:pl-2 hover:text-purple-700"
             >
               {link.name}
             </a>
