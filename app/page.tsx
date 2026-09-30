@@ -1725,7 +1725,7 @@ export default function Home() {
                       </p>
 
                       <a
-                        href="https://www.google.com/maps/place/Chengene+Private+Limited/@12.9459399,80.1196112,17z"
+                        href="https://www.google.com/maps/search/?api=1&query=Chengene%20Private%20Limited&query_place_id=Chengene%20Private%20Limited"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Get directions to CHENGENE Private Limited in Chennai"
