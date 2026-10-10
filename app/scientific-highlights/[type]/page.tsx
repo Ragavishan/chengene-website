@@ -79,12 +79,9 @@ export default async function ScientificHighlightCategoryPage({
 
   return (
     <main className="min-h-screen bg-[#FAF8FF] text-[#493765]">
-
       {/* HEADER */}
       <section className="border-b border-purple-100 bg-white px-5 py-12 sm:px-8 sm:py-16 md:px-16 md:py-20">
         <div className="mx-auto max-w-7xl">
-
-          {/* BACK LINK */}
           <Link
             href="/#scientific-highlights"
             className="inline-flex items-center gap-2 text-xs font-semibold text-purple-600 transition hover:text-purple-800 sm:text-sm"
@@ -92,7 +89,6 @@ export default async function ScientificHighlightCategoryPage({
             ← Back to Scientific Highlights
           </Link>
 
-          {/* CATEGORY */}
           <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-purple-600 sm:mt-8 sm:text-xs">
             {config.label}
           </p>
@@ -128,10 +124,9 @@ export default async function ScientificHighlightCategoryPage({
         </div>
       </section>
 
-      {/* CONTENT */}
+      {/* PHOTOS ONLY — NO TEXT UNDER PHOTOS */}
       <section className="px-4 py-10 sm:px-8 sm:py-14 md:px-16 md:py-20">
         <div className="mx-auto max-w-7xl">
-
           {items.length === 0 ? (
             <div className="rounded-2xl border border-purple-100 bg-white px-6 py-12 text-center shadow-[0_10px_30px_rgba(91,33,182,0.05)]">
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#F3EDFF] text-lg text-purple-600">
@@ -149,58 +144,27 @@ export default async function ScientificHighlightCategoryPage({
               </p>
             </div>
           ) : (
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((item) => (
                 <Link
-                    key={`${item.title}-${item.date}`}
-                    href={`/scientific-highlights/${type}/${item.slug}`}
-                    className="group block overflow-hidden rounded-[22px] border border-purple-100 bg-white shadow-[0_12px_35px_rgba(91,33,182,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(91,33,182,0.11)]"
+                  key={`${item.title}-${item.date}`}
+                  href={`/scientific-highlights/${type}/${item.slug}`}
+                  aria-label={`View ${item.title} event history`}
+                  className="group block overflow-hidden rounded-[22px] border border-purple-100 bg-white shadow-[0_12px_35px_rgba(91,33,182,0.07)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(91,33,182,0.11)]"
                 >
-                  {/* IMAGE */}
                   <div className="relative h-[220px] overflow-hidden sm:h-[240px]">
                     <img
                       src={item.image}
                       alt={`${item.title} - ${item.location}`}
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                     />
-
-                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-purple-700 shadow-sm backdrop-blur-sm">
-                      {item.year}
-                    </span>
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="p-5">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-full bg-[#F3EDFF] px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.08em] text-purple-700">
-                        {item.category}
-                      </span>
-
-                      <span className="text-[10px] text-[#9A8BAA]">
-                        {item.date}
-                      </span>
-                    </div>
-
-                    <h2 className="mt-3 text-lg font-semibold leading-tight text-[#594477]">
-                      {item.title}
-                    </h2>
-
-                    <p className="mt-1.5 text-xs font-medium text-purple-500">
-                      {item.location}
-                    </p>
-
-                    <p className="mt-3 text-sm leading-6 text-[#89799F]">
-                      {item.description}
-                    </p>
                   </div>
                 </Link>
               ))}
             </div>
           )}
-
         </div>
       </section>
-
     </main>
   );
 }
