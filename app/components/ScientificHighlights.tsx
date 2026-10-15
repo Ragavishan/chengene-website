@@ -8,7 +8,7 @@ const categories = [
   { label: "Conferences", type: "conferences" },
   { label: "Workshops", type: "workshops" },
   { label: "Publications", type: "publications" },
-  { label: "Presentations", type: "presentations" },
+  { label: "Certifications", type: "certifications" },
 ];
 
 export default function ScientificHighlights() {

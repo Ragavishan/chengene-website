@@ -9,7 +9,7 @@ export type ScientificHighlight = {
     | "conference"
     | "workshop"
     | "publication"
-    | "presentation";
+    | "certification";
   slug: string;
   title: string;
   location: string;
@@ -137,7 +137,7 @@ export const scientificHighlights: ScientificHighlight[] = [
   year: "2026",
   date: "2026",
   category: "International Scientific Meeting",
-  type: "workshop",
+  type: "conference",
   slug: "in-vitro-non-animal-studies-global-meeting-2026",
   title:
     "Global Meeting on In Vitro Non-Animal Studies",
@@ -199,4 +199,43 @@ export const scientificHighlights: ScientificHighlight[] = [
       "/engagement/vel-tech-biotechnology-student-visit-2026-5.jpeg",
     ],
   },
+
+  {
+    year: "2026",
+    date: "28 September 2026",
+    category: "ISO 13485:2016 Certification",
+    type: "certification",
+    slug: "iso-13485-internal-auditor-certification-2026",
+    title:
+      "Chengene Private Limited Achieves ISO 13485:2016 Internal Auditor Certification",
+    location: "Chengene Private Limited, Chennai, India",
+    description:
+      "We are delighted to announce that our team at Chengene Private Limited has successfully completed the ISO 13485:2016 Internal Auditor Program, conducted by Times Certification Services UK Ltd.\n\nThis certification, awarded on 28th September 2026, validates our competency in auditing and maintaining compliance with the Medical Devices – Quality Management System (QMS) standards. By qualifying as Internal Auditors, our team is now fully equipped to ensure that our processes align with international regulatory requirements, reinforcing our commitment to quality, safety, and continuous improvement.\n\nCertified Internal Auditors from Chengene Private Limited:\n\nDr. V. K. Prasannaswaamy\nMr. Huthya Prakash K\nMr. Saranraj S\nMr. Sivasabariraj A",
+    image:
+      "/engagement/iso-13485-internal-auditor-dr-v-k-prasannaswaamy-2026-1.jpg",
+    gallery: [
+      "/engagement/iso-13485-internal-auditor-dr-v-k-prasannaswaamy.jpg",
+      "/engagement/iso-13485-internal-auditor-huthya-prakash-k-2026.jpg",
+      "/engagement/iso-13485-internal-auditor-saranraj-s-2026.jpg",
+      "/engagement/iso-13485-internal-auditor-sivasabariraj-a-2026.jpg",
+    ],
+  },
+
+  {
+  year: "2026",
+  date: "14 October 2026",
+  category: "Cell Sorting Training",
+  type: "workshop",
+  slug: "sony-ma900-cell-sorter-training-2026",
+  title: "Hands-on Training on Sony MA900 Multi-Application Cell Sorter",
+  location:
+    "Centre for Biomaterials, Cellular and Molecular Theranostics (CBCMT), VIT, Vellore, India",
+  description:
+    "Mr. Sivasakthi P, Senior Research Associate, and Mrs. Sugapriya S, Research Associate, attended hands-on training on the Sony MA900 Multi-Application Cell Sorter on 14 October 2026. The training was conducted at the Centre for Biomaterials, Cellular and Molecular Theranostics (CBCMT), Vellore Institute of Technology (VIT), Vellore.",
+  image: "/engagement/sony-ma900-cell-sorter-training-2026.jpeg",
+
+  gallery: [
+      "/engagement/sony-ma900-cell-sorter-training-2026-1.jpeg",
+    ],
+},
 ];

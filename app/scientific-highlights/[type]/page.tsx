@@ -38,12 +38,12 @@ const categoryConfig = {
     description:
       "Research publications, scientific papers and knowledge contributions from CHENGENE.",
   },
-  presentations: {
-    type: "presentation",
-    label: "Presentations",
-    title: "Scientific Presentations",
+  certifications: {
+    type: "certification",
+    label: "Certifications",
+    title: "Certifications & Professional Development",
     description:
-      "Scientific presentations, technical talks and research-focused knowledge sharing.",
+      "Professional certifications, scientific training and skill development initiatives at CHENGENE.",
   },
 } as const;
 
