@@ -238,4 +238,24 @@ export const scientificHighlights: ScientificHighlight[] = [
       "/engagement/sony-ma900-cell-sorter-training-2026-1.jpeg",
     ],
 },
+
+{
+  year: "2026",
+  date: "13 August 2026",
+  category: "RCGM Approval",
+  type: "certification",
+  slug: "rcgm-approval-chengene-private-limited-2026",
+  title:
+    "Chengene Private Limited Receives RCGM Approval for Recombinant DNA Research Projects",
+  location:
+    "Department of Biotechnology, Ministry of Science & Technology, Government of India",
+  description:
+    "Chengene Private Limited, Chennai, received communication from the Review Committee on Genetic Manipulation (RCGM) regarding research and development work involving recombinant DNA technology.\n\nThe approval covers research work on the development and optimization of CHO cell-based mammalian expression systems for scalable production and purification of recombinant follicle-stimulating hormone (FSH), recombinant human chorionic gonadotropin (hCG), and recombinant trastuzumab and pertuzumab.\n\nRCGM also directed Chengene Private Limited to submit the required compliance documents, including the Annual Compliance Report from the year 2024 onwards, on the IBSC Dashboard of the IBKP portal, and to comply with the Regulations and Guidelines for Recombinant DNA Research and Biocontainment, 2017.",
+  image:
+    "/engagement/rcgm-approval-chengene-private-limited-2026.jpg",
+
+  gallery: [
+      "/engagement/rcgm-approval-chengene-private-limited-2026-1.jpg",
+    ],
+},
 ];
