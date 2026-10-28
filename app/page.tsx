@@ -4,6 +4,7 @@ import WaterSystemsShowcase from "./components/WaterSystemsShowcase";
 import Image from "next/image";
 import Link from "next/link";
 import EquipmentShowcase from "./components/EquipmentShowcase";
+import AboutSection from "./components/AboutSection";
 const facilities = [
   {
     number: "01",
@@ -374,14 +375,14 @@ export default function Home() {
 
             <div className="max-w-[330px] border-l border-purple-300/80 pl-6">
 
-              <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-purple-200 sm:text-[16px]">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.28em] text-purple-400 sm:text-[16px]">
                 Scientific Excellence
               </p>
 
               <h2 className="mt-3 text-2xl font-medium leading-snug tracking-tight text-white xl:text-3xl">
                 Science Shaping
 
-                <span className="block text-purple-200">
+                <span className="block text-purple-400">
                   What Comes Next.
                 </span>
               </h2>
@@ -444,259 +445,8 @@ export default function Home() {
         </div>
       </section>
 
+      <AboutSection />
 
-      {/* ABOUT */}
-      <section
-        id="about"
-        aria-labelledby="about-heading"
-        className="relative scroll-mt-24 overflow-hidden bg-[#F8F6FF] text-[#291844] lg:scroll-mt-28"
-      >
-        {/* Ambient background */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-purple-200/25 blur-[120px]"
-        />
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-40 bottom-20 h-[500px] w-[500px] rounded-full bg-violet-200/25 blur-[130px]"
-        />
-
-        <div className="relative mx-auto max-w-[1800px]">
-
-          {/* =========================
-              ABOUT INTRO
-          ========================= */}
-          <div className="relative grid lg:grid-cols-[0.92fr_1.08fr]">
-
-            {/* Content */}
-            <div className="relative z-20 flex flex-col justify-center px-5 py-14 sm:px-10 sm:py-20 md:px-16 lg:px-20 lg:py-28">
-
-              <div className="mb-5 flex items-center gap-3 sm:mb-6 sm:gap-4">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.30em] text-purple-600 sm:text-xs sm:tracking-[0.35em]">
-                  About Us
-                </span>
-
-                <span
-                  aria-hidden="true"
-                  className="h-[2px] w-8 bg-purple-400 sm:w-10"
-                />
-              </div>
-
-              <h2
-                id="about-heading"
-                className="max-w-[680px] text-[2.15rem] font-semibold leading-[1.08] tracking-tight text-[#291844] sm:text-5xl md:text-6xl lg:text-[64px]"
-              >
-                Turning Science
-                <span className="block">
-                  into{" "}
-                  <span className="bg-gradient-to-r from-purple-700 via-violet-600 to-purple-500 bg-clip-text text-transparent">
-                    Better Tomorrows.
-                  </span>
-                </span>
-              </h2>
-
-              <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-[#6F6282] sm:mt-7 sm:text-base sm:leading-8 md:text-lg">
-                CHENGENE Private Limited is a biotechnology company
-                committed to advancing the frontiers of life sciences
-                through innovative research, high-quality biologics,
-                and world-class manufacturing solutions.
-              </p>
-
-              {/* Key capabilities */}
-              <div className="mt-2 grid grid-cols-2 gap-x-1 gap-y-2 sm:mt-4 sm:grid-cols-4 sm:gap-y-2 sm:gap-0">
-
-                <div className="group flex flex-col items-center px-2 text-center sm:px-3 sm:border-r sm:border-purple-200/70">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100/70 text-lg text-purple-700 transition duration-300 group-hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl">
-                    ⚗
-                  </div>
-
-                  <p className="mt-2 text-[10px] font-medium leading-4 text-[#38245F] sm:mt-3 sm:text-sm sm:leading-5">
-                    Innovative
-                    <span className="block">Research</span>
-                  </p>
-                </div>
-
-                <div className="group flex flex-col items-center px-2 text-center sm:px-3 sm:border-r sm:border-purple-200/70">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100/70 text-purple-700 transition duration-300 group-hover:scale-105 sm:h-14 sm:w-14">
-                    <svg
-                      viewBox="0 0 64 64"
-                      className="h-7 w-7 sm:h-9 sm:w-9"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M17 8c0 12 30 12 30 24S17 44 17 56" />
-                      <path d="M47 8c0 12-30 12-30 24s30 12 30 24" />
-
-                      <path d="M22 17h20" />
-                      <path d="M20 27h24" />
-                      <path d="M20 37h24" />
-                      <path d="M22 47h20" />
-
-                      <circle cx="51" cy="16" r="4" />
-                      <circle cx="57" cy="28" r="4" />
-                      <circle cx="51" cy="40" r="4" />
-
-                      <path d="M53 19l2 5" />
-                      <path d="M55 31l-2 5" />
-                    </svg>
-                  </div>
-
-                  <p className="mt-2 text-[10px] font-medium leading-4 text-[#38245F] sm:mt-3 sm:text-sm sm:leading-5">
-                    High-Quality
-                    <span className="block">Biologics</span>
-                  </p>
-                </div>
-
-                <div className="group flex flex-col items-center px-2 text-center sm:px-3 sm:border-r sm:border-purple-200/70">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100/70 text-lg text-purple-700 transition duration-300 group-hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl">
-                    ⚙
-                  </div>
-
-                  <p className="mt-2 text-[10px] font-medium leading-4 text-[#38245F] sm:mt-3 sm:text-sm sm:leading-5">
-                    Advanced
-                    <span className="block">Manufacturing</span>
-                  </p>
-                </div>
-
-                <div className="group flex flex-col items-center px-2 text-center sm:px-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-100/70 text-lg text-purple-700 transition duration-300 group-hover:scale-105 sm:h-14 sm:w-14 sm:text-2xl">
-                    ✧
-                  </div>
-
-                  <p className="mt-2 text-[10px] font-medium leading-4 text-[#38245F] sm:mt-3 sm:text-sm sm:leading-5">
-                    A Healthier
-                    <span className="block">Tomorrow</span>
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-            {/* Microscope image */}
-            <div className="relative min-h-[310px] overflow-hidden sm:min-h-[600px] lg:min-h-[700px]">
-
-              <Image
-                src="/microscope.jpg"
-                alt="Scientific research and laboratory microscopy at CHENGENE Private Limited"
-                fill
-                priority={false}
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="scale-[0.9] object-cover object-center"
-              />
-
-              {/* Soft edge blending */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-[#F8F6FF] via-[#F8F6FF]/80 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[#F8F6FF] via-[#F8F6FF]/35 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#F8F6FF]/30 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#F8F6FF]/15 to-transparent"
-              />
-
-              <div className="absolute bottom-6 right-4 rounded-full border border-purple-400/40 bg-purple-700 px-3.5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-white shadow-lg sm:bottom-10 sm:right-10 sm:px-5 sm:py-3 sm:text-[14px] sm:tracking-[0.22em]">
-                Science · Research · Innovation
-              </div>
-            </div>
-          </div>
-
-          {/* =========================
-              MISSION
-          ========================= */}
-          <div className="relative grid items-center lg:grid-cols-[1.15fr_0.85fr]">
-
-            {/* Building image */}
-            <div className="relative min-h-[280px] overflow-hidden sm:min-h-[500px] lg:min-h-[560px]">
-
-              <Image
-                src="/chengene-building.jpg"
-                alt="CHENGENE Private Limited biotechnology facility in Chennai"
-                fill
-                priority={false}
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center"
-              />
-
-              {/* Soft edge blending */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-y-0 right-0 w-2/5 bg-gradient-to-l from-[#F8F6FF] via-[#F8F6FF]/65 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8F6FF]/20 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#F8F6FF]/30 to-transparent"
-              />
-
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#F8F6FF]/60 to-transparent"
-              />
-
-              <div className="absolute bottom-6 left-4 rounded-full border border-purple-400/40 bg-purple-700 px-3.5 py-2.5 text-[9px] font-semibold uppercase tracking-[0.14em] text-white shadow-lg sm:bottom-10 sm:left-10 sm:px-5 sm:py-3 sm:text-[14px] sm:tracking-[0.18em]">
-                CHENGENE PRIVATE LIMITED
-              </div>
-            </div>
-
-            {/* Mission content */}
-            <div className="relative z-10 px-5 py-12 sm:px-10 sm:py-16 md:px-16 lg:px-20 lg:py-24">
-
-              <div
-                aria-hidden="true"
-                className="mb-4 h-[3px] w-10 rounded-full bg-gradient-to-r from-purple-700 to-violet-400 sm:mb-5 sm:w-12"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.27em] text-purple-600 sm:text-xs sm:tracking-[0.3em]">
-                Our Mission
-              </p>
-
-              <h3 className="mt-4 max-w-xl text-[1.9rem] font-semibold leading-[1.10] tracking-tight text-[#38205F] sm:mt-5 sm:text-4xl md:text-5xl">
-                Advancing Science.
-                <span className="block bg-gradient-to-r from-purple-700 to-violet-500 bg-clip-text text-transparent">
-                  Enabling Better Health.
-                </span>
-              </h3>
-
-              <p className="mt-5 max-w-xl text-[14px] leading-7 text-[#6F6282] sm:mt-6 sm:text-base sm:leading-8">
-                To advance biotechnology and biopharmaceutical
-                innovation through scientific excellence, reliable
-                research, and the development of solutions that
-                contribute to global health.
-              </p>
-
-              <div className="mt-2 flex flex-wrap items-center gap-2.5 text-base font-medium italic text-purple-600 sm:mt-9 sm:gap-2 sm:text-xl">
-                <span>Science</span>
-                <span className="text-purple-300">•</span>
-                <span>Innovation</span>
-                <span className="text-purple-300">•</span>
-                <span>Impact</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
 
       <EquipmentShowcase />
       {/* PRODUCTION SECTION */}
