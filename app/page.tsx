@@ -1462,16 +1462,16 @@ export default function Home() {
 
                       <p className="mt-1.5 text-[12px] leading-6 text-[#77688D] sm:mt-2 sm:text-sm sm:leading-7">
                         <span itemProp="streetAddress">
-                          A-8, Phase-II, 3rd Main Road,
+                          Plot No: A-8, Phase-II, 3rd Main Road,
                           <br />
-                          Madras Export Processing Zone - SEZ, Tambaram
+                          Madras Export Processing Zone - SEZ, Tambaram,
                         </span>
                         <br />
                         <span itemProp="addressLocality">Chennai</span> -{" "}
-                        <span itemProp="postalCode">600 045</span>
+                        <span itemProp="postalCode">600 045,</span>
                         <br />
                         <span itemProp="addressRegion">Tamil Nadu</span>,{" "}
-                        <span itemProp="addressCountry">India</span>
+                        <span itemProp="addressCountry">India.</span>
                       </p>
 
                       <a
