@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://chengene.org/sitemap.xml",
+    sitemap: "https://chengene.com/sitemap.xml",
   };
 }
