@@ -114,7 +114,7 @@ export default async function ScientificHighlightDetailPage({
 
                 {images.map((image, index) => (
                   <div
-                    key={`${image}-${index}`}
+                    key={`gallery-image-${index}`}
                     className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl border border-purple-100 bg-white"
                   >
                     <img
@@ -159,7 +159,7 @@ export default async function ScientificHighlightDetailPage({
 
                   {images.map((image, index) => (
                     <div
-                      key={`${image}-${index}`}
+                      key={`gallery-image-${index}`}
                       className={`group relative overflow-hidden rounded-xl bg-white ${
                         index === 0 ? "sm:col-span-2" : ""
                       }`}
